@@ -6,9 +6,7 @@ import com.jarmison.varejo.online.api.Enums.TipoMovimentacao;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
 
 @Data
 @Entity
@@ -24,7 +22,6 @@ public class Lancamentos {
     @Enumerated(EnumType.ORDINAL)
     private TipoMovimentacao tipoMovimentacao;
     private Integer quantidade;
-
     private Double saldo;
     @CreationTimestamp
     @Column(nullable = false,updatable = false)

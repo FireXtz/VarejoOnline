@@ -14,7 +14,6 @@ public class VarejoRunner {
 	public static void main(String[] args) {
 		SpringApplication.run(VarejoRunner.class, args);
 		List <Lancamentos> lancamentos = new ArrayList<>();
-		System.out.println(lancamentos.stream().collect(Collectors.toList()));
 	}
 
 }

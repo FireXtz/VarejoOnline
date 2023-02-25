@@ -4,7 +4,6 @@ import com.jarmison.varejo.online.api.Enums.TipoMovimentacao;
 import com.jarmison.varejo.online.api.Exception.ProdutoNaoEncontradoException;
 import com.jarmison.varejo.online.api.VarejoRunner;
 import com.jarmison.varejo.online.api.events.RecursoCriadoEvent;
-import com.jarmison.varejo.online.api.model.Lancamentos;
 import com.jarmison.varejo.online.api.model.Produto;
 import com.jarmison.varejo.online.api.repository.ProdutoRepository;
 import org.slf4j.LoggerFactory;
