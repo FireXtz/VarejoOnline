@@ -4,6 +4,7 @@ import com.jarmison.varejo.online.api.Enums.TipoMovimentacao;
 import com.jarmison.varejo.online.api.Exception.ProdutoNaoEncontradoException;
 import com.jarmison.varejo.online.api.VarejoRunner;
 import com.jarmison.varejo.online.api.events.RecursoCriadoEvent;
+import com.jarmison.varejo.online.api.model.Lancamentos;
 import com.jarmison.varejo.online.api.model.Produto;
 import com.jarmison.varejo.online.api.repository.ProdutoRepository;
 import org.slf4j.LoggerFactory;
@@ -30,7 +31,7 @@ public class ProdutoService {
     private final String MSG_USER_PRODUTO_SALDO_INICIAL = "Não é possível Editar o Produto Saldo Inicial é menor do que a quantidade Minima esperada";
     private final String MSG_USER_PRODUTO_SALDO_INICIAL_SALVAR = "Não é possível Salvar o Produto Saldo Inicial é menor do que a quantidade Minima esperada";
     private final String MSG_PRODUTO_NAO_ENCONTRADO = "Não foi possivel localizar o produto com id de destino:";
-    public ResponseEntity<?>list(){
+    public ResponseEntity<?>listarProdutos(){
         List<Produto> produtos = produtoRepository.findAll();
         return !produtos.isEmpty()?ResponseEntity.ok().body(produtos):ResponseEntity.notFound().build();
     }
@@ -40,7 +41,7 @@ public class ProdutoService {
 
         if ( produto.getSaldoInicial() < produto.getQuantidadeMinima()){
             responseSaldoInicialInvalido.put("mensagem:",MSG_USER_PRODUTO_SALDO_INICIAL_SALVAR);
-            logger.info(MSG_USER_PRODUTO_SALDO_INICIAL_SALVAR);
+            logger.error(MSG_USER_PRODUTO_SALDO_INICIAL_SALVAR);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseSaldoInicialInvalido);
         }
         Map<String, Double> adcionarMovimentacao = new HashMap<>();
@@ -66,18 +67,31 @@ public class ProdutoService {
             Map<String, String> responseSaldoInicialInvalido = new HashMap<>();
             responseSaldoInicialInvalido.put("mensagem:",MSG_USER_PRODUTO_SALDO_INICIAL);
 
-            logger.info(MSG_USER_PRODUTO_SALDO_INICIAL);
+            logger.error(MSG_USER_PRODUTO_SALDO_INICIAL);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseSaldoInicialInvalido);
         }
         if ( updateProduct.getSaldoInicial() < updateProduct.getQuantidadeMinima()){
             Map<String, String> responseSaldoInicialInvalido = new HashMap<>();
             responseSaldoInicialInvalido.put("mensagem:",MSG_USER_PRODUTO_SALDO_INICIAL);
 
-            logger.info(MSG_USER_PRODUTO_SALDO_INICIAL);
+            logger.error(MSG_USER_PRODUTO_SALDO_INICIAL);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseSaldoInicialInvalido);
         }
 
         BeanUtils.copyProperties(produto,updateProduct,"id");
         return ResponseEntity.status(HttpStatus.OK).body(produtoRepository.save(updateProduct));
     }
+
+    @Transactional
+    public ResponseEntity<Map<String, Boolean>> remover(Long id){
+        Produto produto = produtoRepository.findById(id)
+                .orElseThrow(()->new ProdutoNaoEncontradoException("Produto não encontrado com id:"+id));
+        produtoRepository.delete(produto);
+
+        Map<String,Boolean>response = new HashMap<>();
+        response.put("removido",Boolean.TRUE);
+        return ResponseEntity.ok(response);
+    }
+
+
 }
