@@ -1,0 +1,131 @@
+<div class="grid  md:justify-content-between">
+    <div class="col-12 md:col-8">
+        <h3>Edição de Usuário</h3>
+        <small class="text-left"> * - para campos obrigatórios</small>
+    </div>
+    
+    <div class="col-12 md:col-4">
+        <p-breadcrumb [model]="items"></p-breadcrumb>
+    </div>
+
+
+<div  class="container-legacy mt-12 mb-12 shadow-12 w-full">
+    <p-panel >
+        <ng-template pTemplate="header">
+            <label><strong>ID:{{usuario.id}}</strong></label>
+        </ng-template>
+        <div class="formgrid grid">  
+            <div class="field col-12 md:col-12 p-3">
+                <span class="p-float-label">
+                    <input #nome="ngModel" required [(ngModel)]="usuario.nome" type="text" pInputText class="w-full"> 
+                    <label for="float-input" class="obrigatorio">Nome</label>
+                </span>
+                
+            </div>
+                
+            <div class="field col-12 md:col-12 p-3">
+                <div class="p-inputgroup">
+                    <input [disabled]="true" [(ngModel)]="usuario.perfil.nome"
+                      (input)="usuario.perfil = $event.target.value" type="text" pInputText placeholder="Perfil">
+                    <button (click)="AbrirModal()" type="button" pButton pRipple icon="pi pi-search"
+                      styleClass="p-button-warn"></button>
+                  </div>
+            </div>
+            
+
+            <p-dialog 
+                header="Pesquisa de Produtos" 
+                [(visible)]="visualizarModal"
+                [modal]="true"
+                [style]="{ width: '80vw' }"
+                [draggable]="false" 
+                [resizable]="false"
+            >
+
+            <div style="text-align: left">
+                <input 
+                type="text" 
+                pInputText 
+                size="70" 
+                placeholder="Pesquisar"
+                (input)="myTab.filterGlobal($event.target.value, 'contains')" 
+                style="width: fit-content" 
+            />
+            </div>
+
+            <div class="card shadow-3 mt-4 mb-4 p-0">
+
+             <p-table 
+             selectionMode="single" 
+             [(selection)]="usuario.perfil" 
+             [responsive]="true" 
+             [rows]="10"
+             [paginator]="true" 
+             class="w-100" 
+             #myTab 
+             [value]="perfil" 
+             [scrollable]="false"
+             [globalFilterFields]="['id', 'nome','usuario.status','funcionario.nome']"
+             >
+            <ng-template pTemplate="header">
+                <tr (click)="visualizarModal = false">
+                <th>ID</th>
+                <th>Nome</th>
+                <th class="col-acoes-header"></th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-usuario>
+
+                <tr 
+                [pSelectableRow]="usuario" 
+                (click)="clickEventModalPesquisar($event)"
+                (click)="visualizarModal=false"
+                >
+                <td [style]="{'width': '300px'}">
+                    <span class="p-column-title">ID</span>
+                    {{ usuario.id }}
+                </td>
+
+                <td colspan="9" [style]="{'width': '300px'}">
+                    <span class="p-column-title">Nome</span>
+                    {{ usuario.nome }}
+                </td>
+
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                 <td colspan="9">
+                    <span>Nenhum registro encontrado</span>
+                 </td>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="summary">
+                <div>Totalizador: {{myTab.totalRecords}}</div>
+            </ng-template>
+
+            </p-table>
+            </div>
+
+            <ng-template pTemplate="footer">
+
+                <p-button 
+                icon="pi pi-times" 
+                (click)="visualizarModal = false" 
+                label="Cancelar"
+                styleClass="p-button-text">
+               </p-button>
+
+        </ng-template>
+        </p-dialog>
+        
+        </div>
+        <ng-template pTemplate="footer">
+            <p-button (onClick)="adcionarUsuario()" type="submit" class="p-button-raised p-button-text" label="adcionar"></p-button>
+            <p-messages></p-messages>
+        </ng-template>
+    </p-panel>
+</div>

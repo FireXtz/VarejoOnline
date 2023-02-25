@@ -1,0 +1,32 @@
+<div class="grid  md:justify-content-between">
+    <div class="col-12 md:col-8">
+        <h3>Edição de perfil</h3>
+        <small class="text-left"> * - para campos obrigatórios</small>
+    </div>
+    <div class="col-12 md:col-4">
+        <p-breadcrumb [model]="items"></p-breadcrumb>
+    </div>
+</div>
+
+<div class="container-legacy mt-4 mb-4 shadow-2">
+  <p-panel>
+    <ng-template pTemplate="header">
+        <label><strong>Perfil</strong></label>
+    </ng-template>
+
+ <div class="formgrid grid">  
+    <div class="field col-12 md:col-12 p-3">
+        <span class="p-float-label">
+            <input  #codigoBarra="ngModel" required [(ngModel)]="perfil.nome" type="text" pInputText class="w-full"> 
+            <label for="float-input" class="obrigatorio">nome</label>
+        </span>
+ </div>
+
+</div>
+
+<ng-template pTemplate="footer">
+    <p-button  type="submit" (onClick)="editarPerfil()"  class="p-button-raised p-button-text" label="adcionar"></p-button>
+    <p-messages></p-messages>
+</ng-template>
+
+</p-panel>

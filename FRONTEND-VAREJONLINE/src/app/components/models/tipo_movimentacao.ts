@@ -1,0 +1,13 @@
+export enum TipoMovimentacao {
+    ENTRADA = "ENTRADA",
+
+    SAIDA="SAIDA",
+
+    SALDO_INICIAL="SALDO_INICIAL",
+
+    AJUSTE_ENTRADA="SALDO_INICIAL",
+
+    AJUSTE_SAIDA="SALDO_INICIAL",
+    
+    AJUSTE="SALDO_INICIAL"
+}

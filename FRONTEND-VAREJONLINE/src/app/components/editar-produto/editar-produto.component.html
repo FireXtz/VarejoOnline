@@ -1,0 +1,55 @@
+<div class="grid  md:justify-content-between">
+    <div class="col-12 md:col-8">
+        <h3>Edição de Produto: {{produto.nome}}</h3>
+        <small class="text-left"> * - para campos obrigatórios</small>
+    </div>
+    <div class="col-12 md:col-4">
+        <p-breadcrumb [model]="items"></p-breadcrumb>
+    </div>
+</div>
+
+<div class="container-legacy mt-4 mb-4 shadow-2">
+  <p-panel>
+    <ng-template pTemplate="header">
+        <label><strong>ID:{{produto.id}}</strong></label>
+    </ng-template>
+
+ <div class="formgrid grid">  
+    <div class="field col-12 md:col-6 p-3">
+        <span class="p-float-label">
+            <input  #codigoBarra="ngModel" required [(ngModel)]="produto.codigoDeBarra" type="text" pInputText class="w-full"> 
+            <label for="float-input" class="obrigatorio">EAN</label>
+        </span>
+ </div>
+
+ <div class="field col-12 md:col-6 p-3">
+        <span class="p-float-label">
+            <input #nome="ngModel" required [(ngModel)]="produto.nome" type="text" pInputText class="w-full"> 
+            <label for="float-input" class="obrigatorio">Nome</label>
+        </span>
+ </div>
+
+ <div class="field col-12 md:col-3 p-3">
+        <span class="p-float-label">
+            <input #quantidade="ngModel" required [(ngModel)]="produto.quantidadeMinima" type="text" pInputText class="w-full"> 
+            <label for="float-input" class="obrigatorio">Quantidade Minima</label>
+        </span>
+ </div>
+
+ <div class="field col-12 md:col-3 p-3">
+        <span class="p-float-label">
+            <input #saldo="ngModel" required [(ngModel)]="produto.saldoInicial" type="text" pInputText class="w-full"> 
+            <label for="float-input" class="obrigatorio">Saldo Inicial</label>
+        </span>
+ </div>
+
+</div>
+
+
+
+<ng-template pTemplate="footer">
+    <p-button (onClick)="editarProduto()" type="submit" class="p-button-raised p-button-text" label="Editar"></p-button>
+    <p-messages></p-messages>
+</ng-template>
+
+</p-panel>
