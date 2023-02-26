@@ -3,8 +3,19 @@
     <a pButton label="Cadastrar" styleClass="p-button-sm" class="p-button-sm" icon="pi pi-plus mr-2"
     routerLink="/perfil/cadastro"></a>
 </div>
+
+<div style="text-align: left">
+  <input 
+  type="text" 
+  pInputText 
+  size="80" 
+  placeholder="Pesquisar"
+  (input)="myTab.filterGlobal($event.target.value, 'contains')" 
+  style="width: fit-content" 
+/>
+
 <div class="card shadow-3 mt-4 mb-4 p-0">
-    <p-table #myTab [value]="perfil"  [responsive]="true" [rows]="5" [paginator]="true" class="w-100">
+    <p-table [globalFilterFields]="['id', 'nome']" #myTab [value]="perfil"  [responsive]="true" [rows]="5" [paginator]="true" class="w-100">
             <ng-template pTemplate="header">
                 <tr>
                   <th>id</th>

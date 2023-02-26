@@ -18,7 +18,7 @@ export class CadastrarLancamentoComponent implements OnInit {
 
   visualizarModal:boolean;
   produtos:Produto[];
-
+  items:any = [];
   novoLancamento:Lancamentos = new Lancamentos();
 
   cargo = Cargo;
@@ -36,6 +36,11 @@ export class CadastrarLancamentoComponent implements OnInit {
     this.cargoKeyValue = Object.keys(this.cargo);
     this.tipoMovimentoKeyValue = Object.keys(this.tipoMovimentacao);
     this.documentoKeyValue = Object.keys(this.documento);
+
+    this.items = [
+      {label: 'Lançamentos'},
+      {label: 'Pesquisa', routerLink: '/lancamentos'},
+  ];
 }
 
   ngOnInit(): void {

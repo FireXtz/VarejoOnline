@@ -4,7 +4,7 @@
         <small class="text-left"> * - para campos obrigatórios</small>
     </div>
     <div class="col-12 md:col-4">
-        <!-- <p-breadcrumb [model]="items"></p-breadcrumb> -->
+        <p-breadcrumb [model]="items"></p-breadcrumb>
 </div>
 
 
@@ -91,7 +91,7 @@
              #myTab 
              [value]="produtos" 
              [scrollable]="false"
-             [globalFilterFields]="['id', 'email','usuario.status','funcionario.nome']"
+             [globalFilterFields]="['id', 'codigoDeBarra','nome','quantidadeMinima']"
              >
             <ng-template pTemplate="header">
                 <tr (click)="visualizarModal = false">
