@@ -43,6 +43,7 @@ import { CadastroPerfilComponent } from './components/cadastro-perfil/cadastro-p
 import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
 import { CadastrarUsuarioComponent } from './components/cadastrar-usuario/cadastrar-usuario.component';
 import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuario.component';
+import { DetalhesLancamentosComponent } from './components/detalhes-lancamentos/detalhes-lancamentos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,8 @@ import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuar
     CadastroPerfilComponent,
     EditarPerfilComponent,
     CadastrarUsuarioComponent,
-    EditarUsuarioComponent
+    EditarUsuarioComponent,
+    DetalhesLancamentosComponent
   ],
   imports: [
     BrowserModule,

@@ -32,7 +32,7 @@
     [rows]="5" 
     [paginator]="true" 
     class="w-100">
-    
+
             <ng-template pTemplate="header">
                 <tr>
                   <th>Codigo</th>
@@ -77,10 +77,10 @@
                   </td>
               
                     <td class="col-acoes p-1 justify-content-between">
-                      <a pButton pRipple type="button" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
-                      styleClass="p-button-sm" class="p-button-raised p-button-info p-button-text"
+                      <a pButton pRipple type="button" icon="pi pi-file" pTooltip="Detalhes" tooltipPosition="top"
+                      [routerLink]="['/lancamentos/detalhes/', lancamento.codigolancamento]" styleClass="p-button-sm" class="p-button-raised p-button-info p-button-text"
                       ></a>
-                      <button  pButton pRipple icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
+                      <button (click) = "removerLancamentos(lancamento.codigolancamento)"  pButton pRipple icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
                       styleClass="p-button-sm" class="p-button-raised p-button-danger p-button-text"
                       ></button>
                     </td>

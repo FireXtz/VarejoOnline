@@ -17,8 +17,8 @@ export class MovimentosComponent implements OnInit {
     this.listarLancamentos();
   }
 
-  redirectProduto(){
-    this.router.navigate(['/produtos/cadastro'])
+  redirectLancamentos(){
+    this.router.navigate(['/lancamentos/cadastro'])
   }
 
   listarLancamentos(){
@@ -33,7 +33,7 @@ export class MovimentosComponent implements OnInit {
     this.lancamentoService.removerLancamento(id).subscribe(
       (data) => {
         this.sucessoAoRemoverLancamento();
-        this.redirectProduto();
+        this.redirectLancamentos();
         this.ngOnInit();
       },() => this.handleLancamentos()
 
