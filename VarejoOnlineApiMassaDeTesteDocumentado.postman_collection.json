@@ -208,7 +208,7 @@
 				{
 					"name": "Login",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": []
 					},
 					"response": []
