@@ -1,0 +1,38 @@
+<div class="container" style="max-width: 500px; margin: 2em;margin-left: 35em;">
+    <br>
+    <img
+      alt="" style="max-width: 100px;margin-left: 14.9em;"src="https://erp.varejonline.com.br/login/assets/vo-verde.svg" />
+    <h2 style="margin-left: 5.5em;">Seja bem-vindo</h2>
+    <br>
+    <br>
+    <br>
+    <p-card>
+      <form autocomplete="off" #f="ngForm">
+        <br>
+        <div class="p-grid p-fluid">
+          
+          <div class="col-12 md:col-12">
+            <span class="p-float-label p-input-icon-right">
+            <input  pInputText [(ngModel)]="email" name="username"required="preencha corretamente os dados">
+            <label for="inputtext-left">Seu e-mail aqui</label>
+            <i class="pi pi-envelope"></i>
+            </span>
+          </div>
+        <br>
+          <div class="col-12 md:col-12">
+            <span class="p-float-label p-input-icon-right">
+            <input pInputText type="password"[(ngModel)]="senha" type="password" name="password"required="preencha corretamente os dados">
+            <label>Sua senha aqui</label>
+            <i class="pi pi-lock"></i>
+            </span>
+          </div>
+          <br>
+          <div class="col-12 md:col-12">
+            <button  class="p-button-success" pButton type="submit" (click)="checkLogin()" label="Entrar" [disabled]="!f.valid"
+              ></button>
+          </div>
+    
+        </div>
+      </form>
+    </p-card>
+    </div>

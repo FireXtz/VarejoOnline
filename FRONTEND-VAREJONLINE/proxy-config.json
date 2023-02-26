@@ -1,8 +1,0 @@
-{
-  "/server": {
-      "target": "http://localhost:8081",
-      "secure": false,
-      "logLevel": "debug",
-      "timeout": 900000
-  }
-}

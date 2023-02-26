@@ -8,6 +8,7 @@ import { DetalhesLancamentosComponent } from './components/detalhes-lancamentos/
 import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
 import { EditarProdutoComponent } from './components/editar-produto/editar-produto.component';
 import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuario.component';
+import { LoginComponent } from './components/login/login.component';
 import { Lancamentos } from './components/models/lancamentos';
 import { MovimentosComponent } from './components/movimentos/movimentos.component';
 import { PesquisarPerfisComponent } from './components/pesquisar-perfis/pesquisar-perfis.component';
@@ -16,9 +17,13 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { AppLayoutComponent } from './layout/app.layout.component';
 
 const routes: Routes = [
+  { path: '', component: AppLayoutComponent },
+  {path: 'login', component: LoginComponent},
+  
   {
     path: '', component: AppLayoutComponent,
     children: [
+      {path: 'login', component: LoginComponent},
       {path: 'produtos/cadastro', component: CadastroProdutoComponent},
       {path: 'produtos', component: PesquisarProdutosComponent},
       {path: 'produtos/editar/:id', component: EditarProdutoComponent},

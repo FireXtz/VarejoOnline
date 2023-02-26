@@ -44,6 +44,9 @@ import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.
 import { CadastrarUsuarioComponent } from './components/cadastrar-usuario/cadastrar-usuario.component';
 import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuario.component';
 import { DetalhesLancamentosComponent } from './components/detalhes-lancamentos/detalhes-lancamentos.component';
+import { LoginComponent } from './components/login/login.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthHtppInterceptorService } from './components/services/interceptador.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +61,8 @@ import { DetalhesLancamentosComponent } from './components/detalhes-lancamentos/
     EditarPerfilComponent,
     CadastrarUsuarioComponent,
     EditarUsuarioComponent,
-    DetalhesLancamentosComponent
+    DetalhesLancamentosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +92,9 @@ import { DetalhesLancamentosComponent } from './components/detalhes-lancamentos/
     MessagesModule,
     MessageModule
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS, useClass:AuthHtppInterceptorService, multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
