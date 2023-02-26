@@ -20,6 +20,11 @@ Amostra do que foi pedido regras de negocios do backend:
 ### Autenticaço Login
 Acesse o seguinte link para realizar o login apos rodar o comando ng serve no front end angular
 * http://localhost:4200/login
+### Efetue o login com as seguintes credenciais!
+* email: varejoOnline@gmail.com.br
+* senha: password
+* obs: na pasta do backend possui o arquivo de massa de testes basta importar para o postman e realizar testes no backend, serve como massa de testes.
+### Login
 ![alt text](https://github.com/FireXtz/VarejoOnline/blob/main/src/main/resources/assets/LoginForm.png)
 
 ### Produtos e Movimentações de Estoque
