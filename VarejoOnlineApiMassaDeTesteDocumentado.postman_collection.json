@@ -1,0 +1,415 @@
+{
+	"info": {
+		"_postman_id": "d64ce628-fac6-4fb0-ae72-12425b39f471",
+		"name": "VarejoOnlineApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21519159"
+	},
+	"item": [
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "AdcionarProduto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigoDeBarra\":\"AAAAAAA\",\n    \"nome\":\"sabonete\",\n    \"quantidadeMinima\":6,\n    \"saldoInicial\":6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api-varejo/produto/adcionar",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api-varejo",
+								"produto",
+								"adcionar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PesquisarProduto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api-varejo/produto/10",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api-varejo",
+								"produto",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditarProduto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigoDeBarra\":\"AAAAAAAB\",\n    \"nome\":\"Sabonete pa2ntene\",\n    \"quantidadeMinima\":5,\n    \"saldoInicial\":53\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api-varejo/produto/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api-varejo",
+								"produto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoverProduto",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "ListarTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api-varejo/produto/",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api-varejo",
+								"produto",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "AdcionarUsuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\":\"Jonieldo silveira\",\n    \"perfil\":{\n        \"id\":1\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api-varejo/usuario/adcionar",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api-varejo",
+								"usuario",
+								"adcionar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarTodos Copy",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "ListarPorID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "EditarUsuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api-varejo/usuario/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api-varejo",
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoverUsuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api-varejo/usuario/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api-varejo",
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Perfil",
+			"item": [
+				{
+					"name": "AdcionarPerfil",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\":\"OPERADOR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api-varejo/perfil/adcionar",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api-varejo",
+								"perfil",
+								"adcionar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api-varejo/perfil/",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api-varejo",
+								"perfil",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarPorID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api-varejo/perfil/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api-varejo",
+								"perfil",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditarPErfil",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\":\"OPERADOR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api-varejo/perfil/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api-varejo",
+								"perfil",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoverPerfil",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimentos",
+			"item": [
+				{
+					"name": "adcionarLancamento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"produto\":{\n        \"id\":1,\n        \"codigoDeBarra\":\"AAAAAAA\",\n        \"nome\":\"sabonetd\",\n        \"quantidadeMinima\":6,\n        \"saldoInicial\":6\n    },\n    \"cargo\":\"GERENTE\",\n    \"tipoMovimentacao\":\"AJUSTE\",\n    \"motivoMovimentacao\":\"algum\",\n    \"documento\":\"doc.xdmddadl\",\n    \"quantidade\":2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api-varejo/movimentos/adcionar",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api-varejo",
+								"movimentos",
+								"adcionar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarTodos",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "ListarPorID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api-varejo/movimentos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api-varejo",
+								"movimentos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoverLancamento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api-varejo/movimentos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api-varejo",
+								"movimentos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
