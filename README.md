@@ -17,6 +17,11 @@ Amostra do que foi pedido regras de negocios do backend:
 *  3- O sistema deverá ter uma tela para permitir o lançamento das movimentações de estoque com os seguintes campos (GERENTE e OPERADOR):
 * 4- O sistema deverá ter uma tela para listar as movimentações de estoque com os seguintes campos:
 
+### Autenticaço Login
+Acesse o seguinte link para realizar o login apos rodar o comando ng serve no front end angular
+* http://localhost:4200/login
+![alt text](https://github.com/FireXtz/VarejoOnline/blob/main/src/main/resources/assets/LoginForm.png)
+
 ### Produtos e Movimentações de Estoque
 Tela de cadastro de produtos, possuindo validações para não salvar caso o saldo seja menor que a quantidade minima.
 ![alt text](https://github.com/FireXtz/VarejoOnline/blob/main/src/main/resources/assets/CadastroProduto.png)
